@@ -12,15 +12,20 @@ program musi je odsylac lub polykac.
 
 
 int main() {
-    char input; 
-    while (1)
+    char input;
+    int result; 
+    int i = 0;
+    while (i <= 20)
     {
-        printf("\nProsze wprowadzic znak: ");
+        printf("Prosze wprowadzic znak: \n");
         input = getchar();
-        printf("Wprowadziles znak: %c", input);
-        if (isspace(input)) {
-            printf("Wprowadziles spację lub pusty znak");
+        result = isspace(input);
+
+        if (isalpha(input)) {
+            printf("Wprowadziles znak: %c\n", input);
+        } else if (result) {
+            printf("Wprowadziles spację lub pusty znak.\n");
             exit(0);
-        }    
-    }
+        }   
+    } 
 }
