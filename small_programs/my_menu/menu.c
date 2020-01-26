@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <ctype.h>
 
-/*
-Uzyc switch / if
-program prosi by wprowdzic dowolny znak z klawiatury,
-po wcisnieciu entera pokazuje "wprowadziles..."
-a) litere %c (if A-Z lub a-z)
-b) cyfre %c (if 0-9)
-c) znak %c (pozostaly przypadek)
-nie ma potrzeby uzywac %d (przyklad b) bo interpretowane jest to jako znak
-0 - 9 rowniez. kody ascii? 48-56 jesli uzytkownic wprowadzi 0 to dostanie 48.
+/* Excersise 1
+Use Switch of If
+The program asks for a character not a value
+After pressing enter it shows you have entered "sign" which is a:
+a) Alphabetic %c (A-Z or a-z)
+b) Digit %c (0-9)
+c) other sign %c (any other)
+There is no need to use %d cause getchar recognizes %c and then recognizes what type of char it is.
+Ascii codes: 48-57 if user types 0 he will get an 48.
 */
 
 
@@ -19,7 +19,8 @@ int main() {
     znak = getchar();
 
     if (isdigit(znak)) {
-        printf("Wpisales cyfre: %c", znak);
+        printf("Wpisales cyfre: %c.", znak);
+        printf("\nDla ASCII jest to %d.", znak);
     } else if (isalpha(znak)) {
         printf("Wpisales litere: %c", znak);
     } else {
