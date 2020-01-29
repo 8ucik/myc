@@ -1,31 +1,32 @@
 #include <stdio.h>
 #include <ctype.h>
 
-/* Excersise 1
-Use Switch of If
-The program asks for a character not a value
-After pressing enter it shows you have entered "sign" which is a:
-a) Alphabetic %c (A-Z or a-z)
-b) Digit %c (0-9)
-c) other sign %c (any other)
-There is no need to use %d cause getchar recognizes %c and then recognizes what type of char it is.
-Ascii codes: 48-57 if user types 0 he will get an 48.
+/* Excercise 2
+Petle while, do while lub for
+Cykl powtarza sie tak dlugo dopoki uzytkownik nie wcisnie Entera /nowej linii
+enter opuszcza bufor na samym koncu>> ?
+jesli wpisze sie kilka znakow abcfdjksdf to one opuszcza (wszystkie) bufor wraz z enterem
+program musi je odsylac lub polykac.
 */
 
-
 int main() {
-    char znak;
-    printf("Prosze wprowadzic znak:");
-    znak = getchar();
-
-    if (isdigit(znak)) {
-        printf("Wpisales cyfre: %c.", znak);
-        printf("\nDla ASCII jest to %d.", znak);
-    } else if (isalpha(znak)) {
-        printf("Wpisales litere: %c", znak);
-    } else {
-        printf("Wpisales inny znak: %c", znak);
-    }
-
-    return 0;
+	char znak;
+	while(1) {
+		printf("\nProsze wprowadzic znak:");
+		znak = getchar();
+		getchar();
+		if (znak == '\n')
+			break;
+		if (isdigit(znak)) {
+	 			printf("Wpisales cyfre: %c.", znak);
+	   			printf("\nDla ASCII jest to %d.", znak);
+ 		} else if (isalpha(znak)) {
+    			printf("\nWpisales litere: %c", znak);
+ 		} else {
+	   			printf("\nWpisales inny znak: %c", znak);
+  		}
+		while('\n' != getchar());
+	}
+	return 0;
 }
+
