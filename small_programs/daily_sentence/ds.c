@@ -21,7 +21,7 @@ int main () {
     printf("Jaki mamy dzisiaj dzień?\n");
     scanf("%s", str);
     if (isdigit(str)) {
-        printf("Wpisales: %c. \nChodzilo o podanie dokladnego dnia: \n(Pon, Wto, Sro, Czw, Pia, Sob, Nie). \nPozdrawiam.", *str);
+        printf("Wpisales: %s. \nChodzilo o podanie dokladnego dnia: \n(Pon, Wto, Sro, Czw, Pia, Sob, Nie). \nPozdrawiam.", str);
         exit(0);
     } 
     if (strcmp(str, "pon")) {
