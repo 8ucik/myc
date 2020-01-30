@@ -1,8 +1,8 @@
-all: formatted_printing
+all: if_elseif_else
 # Add the select program to all to build it.
 # my_menu, reverse, recursion  
 # daily_sentence  
-# show_distance
+# show_distance, formatted_printing, variables_and_types
 
 # compilation
 compile=gcc -Wall -Wextra -Werror -o
@@ -18,6 +18,14 @@ rev_dir=cd reverse_input
 # file_management:
 cd_out=cd ..
 rem=rm -f
+
+if_elseif_else:
+	@echo "Making c code based on the book: Learn C The Hard Way - if_elseif_else" 
+	$(learn_dir) && $(compile) if_elseif_else if_elseif_else.c
+	
+variables_and_types:
+	@echo "Making c code based on the book: Learn C The Hard Way - variables_and_types" 
+	$(learn_dir) && $(compile) vars_a_ts vars_a_ts.c
 
 formatted_printing:
 	@echo "Making c code based on the book: Learn C The Hard Way - formatted_printing" 
@@ -46,12 +54,14 @@ reverse:
 clean:
 	@echo "Cleaning up.."
 	@echo "Removing program files.."
-	$(learn_dir) && $(rem) formatted_printing && $(cd_out)
-	$(learn_dir) && $(rem) showdist && $(cd_out)
-	$(rev_dir) && $(rem) rev && $(cd_out)
-	$(mymenu_dir) && $(rem) menu && $(cd_out)
-	$(daily_dir) && $(rem) ds && $(cd_out)
-	$(recur_dir) && $(rem) recurs && $(cd_out)
+	$(learn_dir) && $(rem) if_elseif_else && $(cd_out)
+	#$(learn_dir) && $(rem) vars_a_ts && $(cd_out)
+	#$(learn_dir) && $(rem) formatted_printing && $(cd_out)
+	#$(learn_dir) && $(rem) showdist && $(cd_out)
+	#$(rev_dir) && $(rem) rev && $(cd_out)
+	#$(mymenu_dir) && $(rem) menu && $(cd_out)
+	#$(daily_dir) && $(rem) ds && $(cd_out)
+	#$(recur_dir) && $(rem) recurs && $(cd_out)
 	
 	
 	
